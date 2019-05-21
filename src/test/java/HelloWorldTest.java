@@ -1,12 +1,13 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HelloWorldTest {
+public class HelloWorldTest extends BasicTest {
+    HelloWorld hw = new HelloWorld();
+
     @Test
-    public void testMethod1() {
-        HelloWorld hw = new HelloWorld();
-        String ss = hw.returnHello();
-        Assert.assertNotNull(ss);
+    public void testMethod1(){
+        hw.returnHello();
+        Assert.assertNotNull(hw);
     }
 
     @Test
@@ -19,7 +20,11 @@ public class HelloWorldTest {
     @Test
     public void testMethod3(){
         HelloWorld helloWorld = new HelloWorld();
-        int ss = helloWorld.addMethod(2,3);
-        Assert.assertEquals(ss,8);
+        int ss = helloWorld.addMethod(6,3);
+        Assert.assertEquals(ss,9);
+
+
     }
+
+
 }
